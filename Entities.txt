@@ -1,0 +1,24 @@
+a) System General Rules
+
+b) Strong Entities
+            Category
+            Product{
+                product_id
+                product_category
+                product_name
+                product_price
+                product_description
+                product_image
+                product_keyword
+
+
+            }
+            customers
+            payment
+            Bog
+
+c) Entities with attributes
+d)ER diagram
+e) EER diagram
+f) Enterprise Rules
+
