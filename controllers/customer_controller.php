@@ -26,6 +26,11 @@ function updateCustomer_ctr($customer_id,$customer_name, $customer_email, $custo
     return $customer->selectAdata($customer_email);
   }
 
+  function checkPassword_ctr($customer_email,$customer_pass){
+    $customer=new customer_class;
+    return $customer->checkPassword($customer_email,$customer_pass);
+  }
+
 
 
 

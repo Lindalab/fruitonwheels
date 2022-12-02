@@ -4,7 +4,7 @@
 define('SERVERNAME','localhost');
 define('HOSTNAME','root');
 define('PASSWORD','');
-define('DATABASE','shoppn');
+define('DATABASE','fruitonwheels');
 
 
 ?>

@@ -38,6 +38,11 @@ class customer_class extends db_connection
         $sql="SELECT * FROM `customer` WHERE `customer_email`='$customer_email' ";
         return $this->getAdata($sql);
     }
+
+    function checkPassword($customer_email,$customer_pass){
+        $sql="SELECT * FROM `customer` WHERE `customer_email`='$customer_email' and `customer_pass`='$customer_pass'";
+        return $this->getAdata($sql);
+    }
     
 
 	

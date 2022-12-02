@@ -1,3 +1,7 @@
+<?php
+require("../functions/getCatgory.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,7 +171,7 @@
 							<i class="bi bi-textarea"></i>
 						</div>
 						<div class="content">
-                        <a href="shop.php" class="boxed-btn">Create Tip of the Month</a>
+                        <a href='#tipModal'  data-toggle='modal' class="boxed-btn">Create Blog</a>
 						</div>
 					</div>
 				</div>
@@ -197,7 +201,7 @@
 						</div>
 						<h3>Strawberry</h3>
 						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="shop.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Shop</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
@@ -207,7 +211,7 @@
 						</div>
 						<h3>Berry</h3>
 						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="shop.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Shop</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -217,7 +221,7 @@
 						</div>
 						<h3>Lemon</h3>
 						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="shop.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Shop</a>
 					</div>
 				</div>
 			</div>
@@ -515,15 +519,15 @@
 	   <div id="addbrandModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="../actions/addbrand.php" method="POST">
+                <form action="../admin/addcategory.php" method="POST">
                     <div class="modal-header">
-                        <h4 class="modal-title" style="color:chocolate; font-weight: bolder;">Add Product Category</h4>
+                        <h4 class="modal-title" style="color: #051922; font-weight: bolder;">Add Product Category</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body"></div>
                     <div class="form-group">
                         <label>Catgory Name</label>
-                        <input type="text" class="form-control" name="brandName" required>
+                        <input type="text" class="form-control" name="categoryName" required>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -539,30 +543,34 @@
 	 <div id="productModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="#" method="POST"  style="margin:5% 10%;" enctype="multipart/form-data">
+                <form action="../admin/addproduct.php" method="POST"  style="margin:5% 10%;" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title" style="color:chocolate; font-weight: bolder;">Add Product</h4>
+                        <h4 class="modal-title" style="color: #051922; font-weight: bolder;">Add Product</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body"></div>
                     <div class="form-outline mb-4">
-						<label class="form-label" for="ptitle" style="color:chocolate;font-weight: bold;" >Product Name</label>
-                    	<input type="text" id="ptitle" name="ptitle"  class="form-control"  required />
+						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;" >Product Name</label>
+                    	<input type="text" id="ptitle" name="pname"  class="form-control"  required />
                     </div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pprice" style="color:chocolate;font-weight: bold;">Product Price</label>
+                        <label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Category</label>
+                    	<?php getAllCategoryDropdown(); ?>
+                    </div>
+					<div class="form-outline mb-4">
+                        <label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Product Price</label>
                     	<input type="number" name="pprice" id="pprice" class="form-control" placeholder="Price" required />
                     </div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pdesc" style="color:chocolate;font-weight: bold;">Product Description</label>
+                        <label class="form-label" for="pdesc" style="color: #051922;font-weight: bold;">Product Description</label>
                         <input type="text" name="pdesc" id="pdesc" class="form-control"  required />
                     </div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pkeyword" style="color:chocolate;font-weight: bold;">Product Keywords</label>
+                        <label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Product Keywords</label>
                         <input type="text" name="pkeyword" id="pkeyword" class="form-control" placeholder="Keyword" />
                     </div>
                     <div class="form-outline mb-4">
-                    	<label class="form-label" for="pImage" style="color:chocolate;font-weight: bold;">Product Imgae</label>
+                    	<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Product Imgae</label>
                     	<input type="file" name="pImage" id="pImage" class="form-control"  required />
                     </div>
                     <div class="modal-footer">
@@ -574,6 +582,42 @@
         </div>
     </div>
 	<!-- End of Product Modal -->
+
+	<!-- Add tips -->
+	<div id="tipModal" class="modal fade" >
+        <div class="modal-dialog" >
+            <div class="modal-content">
+                <form action="../admin/addtips.php" method="POST"  style="margin:5% 10%; " enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: #051922;; font-weight: bolder;">Create Blog</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;" >Blog Title</label>
+                    	<input type="text" id="ptitle" name="tipname"  class="form-control"  required />
+                    </div>
+					<div class="form-outline mb-4">
+                        <label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Image</label>
+                    	<?php getAllProductDropdown(); ?>
+                    </div>
+					<div class="form-outline mb-4">
+                        <label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Blog Date</label>
+                    	<input type="date" name="pprice" id="pprice" class="form-control" placeholder="Price" required />
+                    </div>
+					<div class="form-outline mb-4">
+                        <label class="form-label" for="message" style="color: #051922;font-weight: bold;">Blog Message</label><br>
+                        <textarea name="message" id="message" cols="50" rows="10" placeholder="Blog Message"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+	<!-- End of tips Modal -->
 
 	
 	<!-- jquery -->

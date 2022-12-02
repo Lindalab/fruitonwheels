@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 12:03 PM
+-- Generation Time: Dec 01, 2022 at 10:17 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -45,7 +45,7 @@ CREATE TABLE `customer` (
   `customer_pass` varchar(150) NOT NULL,
   `customer_city` varchar(30) NOT NULL,
   `customer_contact` varchar(15) NOT NULL,
-  `user_role` int(11) NOT NULL
+  `user_role` int(11) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -71,7 +71,7 @@ CREATE TABLE `orders` (
   `customer_id` int(11) NOT NULL,
   `invoice_no` int(11) NOT NULL,
   `order_date` date NOT NULL,
-   `address_location` varchar(100) NOT NULL
+  `address_location` varchar(100) NOT NULL,
   `order_status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -122,18 +122,16 @@ CREATE TABLE `product_carts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_carts`
+-- Table structure for table `tips`
 --
 
 CREATE TABLE `tips` (
   `tip_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `tip-title` varchar(600) NOT NULL,
-  `tip-date` date NOT NULL,
-  `message` varchar(600) NOT NULL,
-  FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+  `tip_title` varchar(100) NOT NULL,
+  `tip_date` date NOT NULL,
+  `message` varchar(600) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -190,10 +188,11 @@ ALTER TABLE `product_carts`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `categories`
+-- Indexes for table `tips`
 --
 ALTER TABLE `tips`
-  ADD PRIMARY KEY ( `tip_id`);
+  ADD PRIMARY KEY (`tip_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -230,10 +229,10 @@ ALTER TABLE `products`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT for table `tips`
 --
 ALTER TABLE `tips`
-  MODIFY  `tip_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tip_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -271,6 +270,12 @@ ALTER TABLE `products`
 ALTER TABLE `product_carts`
   ADD CONSTRAINT `product_carts_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `product_carts_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tips`
+--
+ALTER TABLE `tips`
+  ADD CONSTRAINT `tips_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

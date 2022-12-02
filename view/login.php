@@ -156,7 +156,7 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-                        <form action="../actions/addbrand.php" method="POST">
+                        <form action="../login/loginproess.php" method="POST">
                             <div class="modal-body"></div>
                             <div class="form-group">
                                 <label>Email</label>
