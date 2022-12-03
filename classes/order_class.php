@@ -41,7 +41,7 @@ class order_class extends db_connection
     }
 
     public function deletFromCart($product_id,$ip_add, $customer_id,$quantity){
-        $sql="DELETE FROM `product_carts` WHERE `product_id`='$product_id' and  ip_add='$ip_add' and customer_id='$customer_id' and quantity='$quantity'";
+        $sql="DELETE FROM `product_carts` WHERE `product_id`='$product_id' and  `ip_add`='$ip_add' and `customer_id`='$customer_id' and `quantity`='$quantity'";
 
         return $this->db_query($sql);
     }
@@ -61,14 +61,14 @@ class order_class extends db_connection
 
     public function increaseCartItemByOne($product_id,$ip_add, $customer_id,$quantity){
         $quantity+=1;
-        $sql="UPDATE `product_carts` SET `quantity`='$quantity' WHERE `product_id`='$product_id' and `ip_add`='$ip_add' and `c_id`='$customer_id'";
+        $sql="UPDATE `product_carts` SET `quantity`='$quantity' WHERE `product_id`='$product_id' and `ip_add`='$ip_add' and `customer_id`='$customer_id'";
         return $this->db_query($sql);
 
     }
 
     public function decreaseCartItemByOne($product_id,$ip_add, $customer_id,$quantity){
-        $quantity-=1;
-        $sql="UPDATE `product_carts` SET `quantity`='$quantity' WHERE `product_id`='$product_id' and `ip_add`='$ip_add' and `c_id`='$customer_id'";
+       $quantity-=1;
+        $sql="UPDATE `product_carts` SET `quantity`='$quantity' WHERE `product_id`='$product_id' and `ip_add`='$ip_add' and `customer_id`='$customer_id'";
         return $this->db_query($sql);
 
     }

@@ -102,6 +102,7 @@
 									<?php 
 										if(isset($_SESSION['userLogin'])){
 											echo " <a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</a>";
+											echo "<a class='shopping-cart' href='cart.php'><i class='fas fa-shopping-cart'></i></a>";
 										}
 										else{
 											echo "

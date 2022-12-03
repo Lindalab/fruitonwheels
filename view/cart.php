@@ -1,3 +1,7 @@
+<?php
+require_once("../functions/displayCart.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +9,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+
 
 	<!-- title -->
 	<title>Cart</title>
@@ -30,6 +36,8 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+
 
 </head>
 <body>
@@ -158,34 +166,17 @@
 									<th class="product-name">Name</th>
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
+									<th class="product-increse">Increase Qty</th>
+									<th class="product-decrease">Decrease Qty</th>
 									<th class="product-total">Total</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""></td>
-									<td class="product-name">Strawberry</td>
-									<td class="product-price">$85</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="assets/img/products/product-img-2.jpg" alt=""></td>
-									<td class="product-name">Berry</td>
-									<td class="product-price">$70</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="assets/img/products/product-img-3.jpg" alt=""></td>
-									<td class="product-name">Lemon</td>
-									<td class="product-price">$35</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
+								<?php 
+									$catTotal = myCartViewTable_fnc();
+								
+								
+								?>
 							</tbody>
 						</table>
 					</div>
@@ -197,21 +188,13 @@
 							<thead class="total-table-head">
 								<tr class="table-total-row">
 									<th>Total</th>
-									<th>Price</th>
+									<th>Price(GHC)</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>$500</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Shipping: </strong></td>
-									<td>$45</td>
-								</tr>
-								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td>$545</td>
+									<td><?php echo $catTotal;?></td>
 								</tr>
 							</tbody>
 						</table>

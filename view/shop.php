@@ -102,6 +102,7 @@ require_once("../functions/displayProduct.php");
 										<?php 
 										if(isset($_SESSION['userLogin'])){
 											echo " <a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</a>";
+											echo "<a class='shopping-cart' href='cart.php'><i class='fas fa-shopping-cart'></i></a>";
 										}
 										else{
 											echo "
@@ -110,7 +111,7 @@ require_once("../functions/displayProduct.php");
        											";
 										}
 										 ?>
-										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+										
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
