@@ -1,5 +1,5 @@
 <?php
-require("../classes/customer_class.php");
+require_once("../classes/customer_class.php");
 
 function createCustomer_ctr($customer_name, $customer_email, $customer_pass, $customer_city, $customer_contact, $user_role){
   $customer=new customer_class;

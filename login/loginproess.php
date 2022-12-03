@@ -8,6 +8,7 @@ if(isset($_POST['submit'])){
 
     $login=checkPassword_ctr($customer_email,$hashed_password );
     if($login){
+        session_start();
         $_SESSION['customer_id'] = $login['customer_id'];
         $_SESSION['customer_name'] = $login['customer_name'];
         $_SESSION['customer_email'] = $login['customer_email'];

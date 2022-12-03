@@ -1,5 +1,5 @@
 <?php
-require("../classes/order_class.php");
+require_once("../classes/order_class.php");
 
 function  addToOrder_ctr($customer_id,$invoice_no,$order_date,$address_location,$order_status){
     $order= new order_class;
@@ -68,6 +68,11 @@ function  getAnOrder_ctr($customer_id){
       function  addToOrderDetails_ctr($order_id,$product_id,$quantity){
         $ordedetails= new order_class;
         return $ordedetails->addToOrderDetails($order_id,$product_id,$quantity);
+    }
+
+    function showCustomerOrders_ctr(){
+        $order = new order_class;
+        return $order->showCustomersOrder();
     }
 
 

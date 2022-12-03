@@ -2,13 +2,13 @@
 //database
 
 //database credentials
-require('db_cred.php');
+require_once('db_cred.php');
 
 /**
  *@author David Sampah
  *@version 1.1
  */
-class db_connection
+  class db_connection
 {
 	//properties
 	public $result=NULL;
@@ -21,7 +21,7 @@ class db_connection
 	*@return bolean
 	**/
 	function connect(){
-		$this->conn=mysqli_connect(SERVERNAME,HOSTNAME, PASSWORD,DATABASE);
+		$this->conn=mysqli_connect(SERVERNAME,HOSTNAME,PASSWORD,DATABASE);
 		if(mysqli_connect_errno()){
 			return false;
 		}
@@ -126,4 +126,7 @@ class db_connection
 	}
 	
 }
+
+$myconnection =new db_connection;
+echo $myconnection->connect();
 ?>

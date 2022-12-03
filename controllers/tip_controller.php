@@ -1,4 +1,5 @@
 <?php
+require_once("../classes/tip_class.php");
 
 function creatBlog_ctr($product_id,$tip_title,$tip_date,$message){
     $blog = new tip_class;

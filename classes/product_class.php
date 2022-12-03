@@ -1,6 +1,6 @@
 <?php
 //connect to database class
-require("../settings/db_class.php");
+require_once("../settings/db_class.php");
 
 /**
 *Product class to handle all products functions 
@@ -71,6 +71,11 @@ class product_class extends db_connection
     function selectAProduct($product_id){
         $sql="SELECT * FROM `products` WHERE `product_id`='$product_id'";
         return $this->getAdata($sql);
+    }
+
+    function selectProductByCategory($category){
+        $sql="SELECT products.* FROM products,categories WHERE categories.category_id=products.product_category and categories.category_name LIKE '%$category%';";
+        return $this->getAllData($sql);
     }
 	
 

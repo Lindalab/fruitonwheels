@@ -1,5 +1,5 @@
 <?php
-require("../classes/product_class.php");
+require_once("../classes/product_class.php");
 
 
 /**
@@ -59,6 +59,11 @@ function deleteProduct_ctr($product_id){
  function selectAProduct_ctr($product_id){
     $product=new product_class;
      return $product->selectAProduct($product_id);
+ }
+
+ function selectProductByCategory($category){
+    $product =new product_class;
+    return $product->selectProductByCategory($category);
  }
 
 

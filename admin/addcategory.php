@@ -1,5 +1,6 @@
 <?php
-require("../controllers/product_controller.php");
+require_once("../controllers/product_controller.php");
+
 if(isset($_POST['submit'])){
     $category_name=$_POST['categoryName'];
     $createCat=createCategory_ctr($category_name);

@@ -1,5 +1,6 @@
 <?php
-require("../functions/getCatgory.php");
+require_once("../functions/getCatgory.php");
+require_once("../functions/getOrders.php");
 ?>
 
 <!DOCTYPE html>
@@ -148,7 +149,7 @@ require("../functions/getCatgory.php");
 				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
-							<i class="bi bi-file-earmark-plus-fill"></i>
+							<i class="fas fa-shipping-fast"></i>
 						</div>
 						<div class="content">
                         <a href='#addbrandModal'  data-toggle='modal' class="boxed-btn">Add Categories</a>
@@ -158,7 +159,7 @@ require("../functions/getCatgory.php");
 				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
-							<i class="bi bi-node-plus-fill"></i>
+							<i class="fas fa-sync-alt"></i>
 						</div>
 						<div class="content">
                         <a href='#productModal'  data-toggle='modal' class="boxed-btn">Add Product</a>
@@ -168,7 +169,7 @@ require("../functions/getCatgory.php");
 				<div class="col-lg-4 col-md-6">
 					<div class="list-box d-flex justify-content-start align-items-center">
 						<div class="list-icon">
-							<i class="bi bi-textarea"></i>
+							<i class="fas fa-sync"></i>
 						</div>
 						<div class="content">
                         <a href='#tipModal'  data-toggle='modal' class="boxed-btn">Create Blog</a>
@@ -181,53 +182,7 @@ require("../functions/getCatgory.php");
 	</div>
 	<!-- end features list section -->
 
-	<!-- product section -->
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Ordered</span> Products</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-					</div>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="shop.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Shop</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="shop.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Shop</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="shop.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Go to Shop</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product section -->
 
 	<!-- cart banner section -->
 	<section class="cart-banner pt-100 pb-100">
@@ -360,50 +315,23 @@ require("../functions/getCatgory.php");
 					</div>
 				</div>
 			</div>
+			<!-- product section -->
+			<div class="cart-section mt-150 mb-150">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-12">
+							<div class="cart-table-wrap">
+								
+										<?php orderedViewTable_fnc(); ?>
+									
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.php"><div class="latest-news-bg news-bg-1"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.php">You will vainly look for fruit on it in autumn.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-latest-news">
-						<a href="single-news.php"><div class="latest-news-bg news-bg-2"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.php">A man's worth has its season, like tomato.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-latest-news">
-						<a href="single-news.php"><div class="latest-news-bg news-bg-3"></div></a>
-						<div class="news-text-box">
-							<h3><a href="single-news.php">Good thoughts bear good fresh juicy fruit.</a></h3>
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
-							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
-						</div>
-					</div>
-				</div>
+	<!-- end product section -->
+				
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -526,11 +454,11 @@ require("../functions/getCatgory.php");
                     </div>
                     <div class="modal-body"></div>
                     <div class="form-group">
-                        <label>Catgory Name</label>
+                        <label  class="form-label" style="color: #051922;font-weight: bold;" >Catgory Name</label>
                         <input type="text" class="form-control" name="categoryName" required>
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btnAdd btn-primary" name="submit" value="Add">
                     </div>
                 </form>
@@ -571,10 +499,10 @@ require("../functions/getCatgory.php");
                     </div>
                     <div class="form-outline mb-4">
                     	<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Product Imgae</label>
-                    	<input type="file" name="pImage" id="pImage" class="form-control"  required />
+                    	<input type="file" name="pImage" id="pImage" class="form-control" accept="image/*"  required />
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
                     </div>
                 </form>
@@ -602,15 +530,15 @@ require("../functions/getCatgory.php");
                     	<?php getAllProductDropdown(); ?>
                     </div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Blog Date</label>
-                    	<input type="date" name="pprice" id="pprice" class="form-control" placeholder="Price" required />
+                        <label class="form-label" for="blogdate" style="color: #051922;font-weight: bold;">Blog Date</label>
+                    	<input type="date" name="blogdate" id="blogdate" class="form-control" placeholder="Price" required />
                     </div>
 					<div class="form-outline mb-4">
                         <label class="form-label" for="message" style="color: #051922;font-weight: bold;">Blog Message</label><br>
                         <textarea name="message" id="message" cols="50" rows="10" placeholder="Blog Message"></textarea>
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
                     </div>
                 </form>

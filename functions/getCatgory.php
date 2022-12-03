@@ -1,5 +1,5 @@
 <?php
-require("../controllers/product_controller.php");
+require_once("../controllers/product_controller.php");
 
 function getAllCategoryDropdown()
 {
@@ -32,16 +32,16 @@ function getAllProductDropdown()
     ";
     foreach ($data as $products) {
         $productID = $products['product_id'];
-        $productImage = $products['product_image'];
-        myproduct($productID, $productImage);
+        $productName = $products['product_name'];
+        myproduct($productID, $productName);
     }
     echo "</select>";
 }
 
-function myproduct($productID, $productImage)
+function myproduct($productID, $productName)
 {
     echo "
-    <option value='$productID'>$productImage</option>
+    <option value='$productID'>$productName</option>
     
     ";
 }
