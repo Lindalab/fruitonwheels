@@ -1,6 +1,6 @@
 <?php
 require("../controllers/customer_controller.php");
-
+session_start();
 if(isset($_POST['submit'])){
     $customer_email=$_POST['email'];
     $customer_pass=$_POST['password'];
@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 
     $login=checkPassword_ctr($customer_email,$hashed_password );
     if($login){
-        session_start();
+ 
         $_SESSION['customer_id'] = $login['customer_id'];
         $_SESSION['customer_name'] = $login['customer_name'];
         $_SESSION['customer_email'] = $login['customer_email'];
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 
         }
         else{
-            header("location:../view/shop.php");
+            header("location:../view/index_2.php");
         }
 
     }
@@ -31,5 +31,8 @@ if(isset($_POST['submit'])){
     }
 
 }
+
+
+
 
 ?>

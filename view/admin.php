@@ -1,6 +1,7 @@
 <?php
 require_once("../functions/getCatgory.php");
 require_once("../functions/getOrders.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +102,7 @@ require_once("../functions/getOrders.php");
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.php">Logout</i></a>
+										<a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										
 									</div>

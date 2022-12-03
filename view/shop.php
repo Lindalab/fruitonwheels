@@ -1,5 +1,6 @@
 <?php
 require_once("../functions/displayProduct.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +99,17 @@ require_once("../functions/displayProduct.php");
 								</li>
 								<li>
 									<div class="header-icons">
+										<?php 
+										if(isset($_SESSION['userLogin'])){
+											echo " <a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</a>";
+										}
+										else{
+											echo "
+        										<a class='shopping-cart' href='register.php'>Sign Up</i></a>
+												<a class='shopping-cart' href='login.php'>Login</i></a>
+       											";
+										}
+										 ?>
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
@@ -233,16 +245,16 @@ require_once("../functions/displayProduct.php");
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p> Healthy and affordable fruits and assorted is our hallmark</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							<li>Ashesi University</li>
+							<li>fruitwheels@gmail.com</li>
+							<li>+233 27 078 8253</li>
 						</ul>
 					</div>
 				</div>
@@ -278,8 +290,8 @@ require_once("../functions/displayProduct.php");
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
-						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Linda Arthur</a>,  All Rights Reserved.<br>
+						
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">

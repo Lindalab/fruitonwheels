@@ -127,6 +127,5 @@ require_once('db_cred.php');
 	
 }
 
-$myconnection =new db_connection;
-echo $myconnection->connect();
+
 ?>

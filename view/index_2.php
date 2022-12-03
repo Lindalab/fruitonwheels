@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,8 +100,18 @@
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="register.php">Sign Up</i></a>
-										<a class="shopping-cart" href="login.php">Login</i></a>
+										<?php 
+										
+										if(isset($_SESSION['userLogin'])){
+											echo " <a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</a>";
+										}
+										else{
+											echo "
+        										<a class='shopping-cart' href='register.php'>Sign Up</i></a>
+												<a class='shopping-cart' href='login.php'>Login</i></a>
+       											";
+										}
+										 ?>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>

@@ -59,7 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="#">Home</a>
+								<li><a href="index_2.php">Home</a>
 									<!-- <ul class="sub-menu">
 										<li><a href="index.php">Static Home</a></li>
 										<li><a href="index_2.php">Slider Home</a></li>

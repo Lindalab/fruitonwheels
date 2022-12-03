@@ -1,6 +1,7 @@
 <?php
 require_once("../controllers/product_controller.php");
 
+session_start();
 function showAllProducts_fnc()
 {
 
@@ -33,9 +34,15 @@ function showSingleProduct($product_id,$productName,$productPrice,$productImage)
 							<a href='single-product.php'><img src='$productImage' alt=''></a>
 						</div>
 						<h3>$productName</h3>
-						<p class='product-price'><span>Per Kg</span> $productPrice GHC </p>
-						<a href='cart.php?id=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Add to Cart</a>
-					</div>
+						<p class='product-price'><span>Per Kg</span> $productPrice GHC </p>";
+
+                        if(isset($_SESSION['userLogin'])){
+						    echo "<a href='cart.php?id=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Add to Cart</a>";
+                        }else{
+                            echo "<a href='cart.php?id=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Login to Add to Cart</a>";
+                        }
+					
+                    echo"    </div>
 				</div>
     ";
 }
@@ -74,8 +81,14 @@ function showSingleProductByType($product_id,$productName,$productPrice,$product
 							<a href='single-product.php'><img src='$productImage' alt=''></a>
 						</div>
 						<h3>$productName</h3>
-						<p class='product-price'><span>Per Kg</span> $productPrice GHC </p>
-						<a href='cart.php?id=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Add to Cart</a>
+						<p class='product-price'><span>Per Kg</span> $productPrice GHC </p>";
+
+						if(isset($_SESSION['userLogin'])){
+						    echo "<a href='cart.php?id=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Add to Cart</a>";
+                        }else{
+                            echo "<a href='login.php?id=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Login to Add to Cart</a>";
+                        }
+                        echo "
 					</div>
 				
     ";
