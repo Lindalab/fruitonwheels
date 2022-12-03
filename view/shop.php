@@ -297,7 +297,7 @@ require_once("../functions/displayProduct.php");
 		</div>
 	</div>
 
-	<?php showAllProducts_fnc(); ?>
+	
 	<!-- end copyright -->
 	
 	<!-- jquery -->
