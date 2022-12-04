@@ -1,3 +1,8 @@
+<?php
+require_once("../functions/displayCart.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +35,9 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<script src="https://js.paystack.co/v1/inline.js"></script> 
+
 
 </head>
 <body>
@@ -165,7 +173,6 @@
 						        <div class="billing-address-form">
 						        	<form action="../actions/" method="post">
 						        		<p><input type="text" placeholder="Address"></p>
-						        		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
 										<p><input type="Submit" value="Submit"></p>
 						        	</form>
 						        </div>
@@ -203,45 +210,58 @@
 								</tr>
 							</thead>
 							<tbody class="order-details-body">
-								<tr>
-									<td>Product</td>
-									<td>Total</td>
-								</tr>
-								<tr>
-									<td>Strawberry</td>
-									<td>$85.00</td>
-								</tr>
-								<tr>
-									<td>Berry</td>
-									<td>$70.00</td>
-								</tr>
-								<tr>
-									<td>Lemon</td>
-									<td>$35.00</td>
-								</tr>
+								<?php $catTotal = myPaymentSummaryTable_fnc();
+								?>
 							</tbody>
 							<tbody class="checkout-details">
 								<tr>
-									<td>Subtotal</td>
-									<td>$190</td>
-								</tr>
-								<tr>
-									<td>Shipping</td>
-									<td>$50</td>
-								</tr>
-								<tr>
 									<td>Total</td>
-									<td>$240</td>
+									<td><?php echo $catTotal;?></td>
 								</tr>
 							</tbody>
 						</table>
-						<a href="#" class="boxed-btn">Place Order</a>
+						<!-- <a href="#" class="boxed-btn" onclick="payWithPaystack()" >Place Order</a> -->
+						<button class="boxed-btn" type="submit"  onclick="payWithPaystack()">Pay</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end check out section -->
+
+	<script>
+        
+
+        function payWithPaystack() {
+            event.preventDefault();
+            // event.preventDefault();
+
+            let handler = PaystackPop.setup({
+                key: 'pk_test_1917da2fc21c61a25eb4edb146b723e98b2a7969', // Replace with your public key
+                // email: document.getElementById("email-address").value,
+                email: '<?php 
+                  echo  $_SESSION['customer_email'] ; 
+                  ?>',
+                // amount: document.getElementById("amount").value * 100,
+                amount: <?php echo $catTotal ?> * 100,
+                ref: Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                // label: "Optional string that replaces customer email"
+                currency: 'GHS',
+                onClose: function() {
+                    alert('Window closed.');
+                },
+                callback: function(response) {
+                    
+                    let message = 'Payment complete! Reference: ' + response.reference;
+                    alert(message);
+
+                    window.location = "../actions/payment_process.php?reference=" + response.reference;
+                }
+            });
+
+            handler.openIframe();
+        }
+    </script>
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">
@@ -278,16 +298,16 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p> Healthy and affordable fruits and assorted is our hallmark</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							<li>Ashesi University</li>
+							<li>fruitwheels@gmail.com</li>
+							<li>+233 27 078 8253</li>
 						</ul>
 					</div>
 				</div>
@@ -363,6 +383,10 @@
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+
+
+
+	
 
 </body>
 </html>

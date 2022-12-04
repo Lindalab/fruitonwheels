@@ -71,7 +71,6 @@ CREATE TABLE `orders` (
   `customer_id` int(11) NOT NULL,
   `invoice_no` int(11) NOT NULL,
   `order_date` date NOT NULL,
-  `address_location` varchar(100) NOT NULL,
   `order_status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

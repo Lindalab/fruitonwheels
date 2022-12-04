@@ -13,8 +13,8 @@ require_once("../settings/db_class.php");
 class order_class extends db_connection
 {
 	
-	function addToOrder($customer_id,$invoice_no,$order_date,$address_location,$order_status){
-        $sql="INSERT INTO `orders`(`customer_id`, `invoice_no`, `order_date`,`address_location`, `order_status`) VALUES ('$customer_id','$invoice_no','$order_date','$address_location','$order_status')";
+	function addToOrder($customer_id,$invoice_no,$order_date,$order_status){
+        $sql="INSERT INTO `orders`(`customer_id`, `invoice_no`, `order_date`,`order_status`) VALUES ('$customer_id','$invoice_no','$order_date','$order_status')";
         $this->db_query($sql);
         $last_id = mysqli_insert_id($this->conn);
         return  $last_id;

@@ -1,9 +1,9 @@
 <?php
 require_once("../classes/order_class.php");
 
-function  addToOrder_ctr($customer_id,$invoice_no,$order_date,$address_location,$order_status){
+function  addToOrder_ctr($customer_id,$invoice_no,$order_date,$order_status){
     $order= new order_class;
-    return $order->addToOrder($customer_id,$invoice_no,$order_date,$address_location,$order_status);
+    return $order->addToOrder($customer_id,$invoice_no,$order_date,$order_status);
 }
 
 function getAllOrder_ctr(){

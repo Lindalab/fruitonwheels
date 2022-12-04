@@ -50,4 +50,41 @@ function myCartItems_fnc($productId,$productName,$productPrice,$productQuantity,
 
 
 
+
+function myPaymentSummaryTable_fnc()
+{
+    
+    $data = showAPersonCart_ctr($_SESSION['customer_id'], get_client_ip());
+    $catTotal=0;
+    
+    foreach ($data as $cartItem) {
+        $productId=$cartItem['product_id'];
+        $productName=$cartItem['product_name'];
+        $productPrice=$cartItem['product_price'];
+        $productQuantity=$cartItem['quantity'];
+        $total= $productQuantity *$productPrice ;
+        $catTotal+=$total;
+        mySummary_fnc($productId,$productName, $total);
+        
+    }
+     
+    return $catTotal;
+}
+
+
+function mySummary_fnc($productId,$productName,$total)
+{ 
+    echo "
+
+    <tr>
+	<td>$productName</td>
+	<td>$total</td>
+	</tr>
+
+
+    ";
+}
+
+
+
 ?>

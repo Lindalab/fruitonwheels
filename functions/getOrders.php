@@ -13,7 +13,6 @@ function orderedViewTable_fnc()
 	<th class='product-price'>Price</th>
 	<th class='customer-name'>Customer Name</th>
     <th class='customer-contact'>Customer Contact</th>
-	<th class='customer-address'>Delivery Address</th>
 	<th class='customer-no'>Invoice No</th>
 	<th class='order-status'>Order Status</th>
 	<th class='product-total'>Total(GHC)</th>
@@ -29,12 +28,11 @@ function orderedViewTable_fnc()
         $price=$product['product_price'];
         $customerName=$product['customer_name'];
         $customerContact=$product['customer_contact'];
-        $address=$product['address_location'];
         $invoiceNo=$product['invoice_no'];
         $orderStatus=$product['order_status'];
         $total=$orderquantity*$price;
         
-        orderedItem_fnc( $productImage, $orderquantity,$price,$customerName,$customerContact,$address,$invoiceNo,$orderStatus,$total);
+        orderedItem_fnc( $productImage, $orderquantity,$price,$customerName,$customerContact,$invoiceNo,$orderStatus,$total);
     }
     echo "
     </tbody>
@@ -42,7 +40,7 @@ function orderedViewTable_fnc()
     ";
 }
 
-function orderedItem_fnc( $productImage, $orderquantity,$price,$customerName,$customerContact,$address,$invoiceNo,$orderStatus,$total)
+function orderedItem_fnc( $productImage, $orderquantity,$price,$customerName,$customerContact,$invoiceNo,$orderStatus,$total)
 {
     echo "
     <tr class='table-body-row'>
@@ -51,7 +49,6 @@ function orderedItem_fnc( $productImage, $orderquantity,$price,$customerName,$cu
 	<td class='product-price'>$price</td>
     <td class='customer-name'>$customerName</td>
     <td class='customer-contact'>$customerContact</td>
-    <td class='customer-address'>$address</td>
 	<td class='customer-no'>$invoiceNo</td>
     <td class='order-status'>$orderStatus</td>
 	<td class='product-total'>$total</td>

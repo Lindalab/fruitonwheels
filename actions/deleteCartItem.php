@@ -6,7 +6,7 @@ $ip_add=$_GET['ipaddress'];
 $customer_id=$_GET['customerid'];
 $quantity=$_GET['quantity'];
 
-$deleteCart= deletFromCart_ctr($p_id,$ip_add, $c_id,$qty);
+$deleteCart= deletFromCart_ctr($product_id,$ip_add,$customer_id,$quantity);
 
 
 if(!$deleteCart){
