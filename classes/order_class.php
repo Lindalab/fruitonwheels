@@ -57,6 +57,14 @@ class order_class extends db_connection
         return $this->getAllData($sql);
     }
 
+    public function showAPersonCartItem($customer_id,$ip_add){
+        $sql="SELECT products.product_name as product_name , products.product_price as product_price,products.product_image as product_image, product_carts.quantity as quantity,product_carts.product_id as product_id,product_carts.ip_add as ip_add,product_carts.customer_id as customer_id from products,product_carts,customer where product_carts.product_id=products.product_id and product_carts.customer_id=customer.customer_id
+        and product_carts.customer_id='$customer_id' and ip_add ='$ip_add' " ;
+        return $this->getAllData($sql);
+    }
+
+
+
     // updation in cart table
 
     public function increaseCartItemByOne($product_id,$ip_add, $customer_id,$quantity){

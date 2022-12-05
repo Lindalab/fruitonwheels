@@ -40,6 +40,12 @@ function  getAnOrder_ctr($customer_id){
         return $cart->showAPersonCart($customer_id,$ip_add);
     }
 
+    function showAPersonCartItem_ctr($customer_id,$ip_add,$product_id){
+        $cart =new order_class;
+        return $cart->showAPersonCartItem($customer_id,$ip_add,$product_id);
+
+    }
+
     function  increaseCartItemByOne_ctr($product_id,$ip_add, $customer_id,$quantity){
         $cart= new order_class;
         return $cart->increaseCartItemByOne($product_id,$ip_add, $customer_id,$quantity);
