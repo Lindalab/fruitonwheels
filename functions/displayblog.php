@@ -1,6 +1,7 @@
 <?php
 
 require_once("../controllers/tip_controller.php");
+
 function showBlog_fnc()
 {
     $data =selectBlogsByLimit_ctr();
@@ -22,6 +23,8 @@ function showBlog_fnc()
         }
    
 }
+
+
 function showSingleBlog($tip_id,$tipName,$tipdate,$tipImage,$tipMessage)
 {
 

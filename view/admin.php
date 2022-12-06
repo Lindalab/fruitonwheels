@@ -1,18 +1,20 @@
 <?php
 require_once("../functions/getCatgory.php");
 require_once("../functions/getOrders.php");
+require_once("../admin/productTable.php")
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
-    
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous"> 
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
 
 	<!-- title -->
 	<title>FruitOnWheels</title>
@@ -38,18 +40,22 @@ require_once("../functions/getOrders.php");
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
 </head>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -104,7 +110,7 @@ require_once("../functions/getOrders.php");
 									<div class="header-icons">
 										<a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										
+
 									</div>
 								</li>
 							</ul>
@@ -118,8 +124,8 @@ require_once("../functions/getOrders.php");
 		</div>
 	</div>
 	<!-- end header -->
-	
-	
+
+
 
 	<!-- hero area -->
 	<div class="hero-area hero-bg">
@@ -153,7 +159,7 @@ require_once("../functions/getOrders.php");
 							<i class="fas fa-shipping-fast"></i>
 						</div>
 						<div class="content">
-                        <a href='#addbrandModal'  data-toggle='modal' class="boxed-btn">Add Categories</a>
+							<a href='#addbrandModal' data-toggle='modal' class="boxed-btn">Add Categories</a>
 						</div>
 					</div>
 				</div>
@@ -163,7 +169,7 @@ require_once("../functions/getOrders.php");
 							<i class="fas fa-sync-alt"></i>
 						</div>
 						<div class="content">
-                        <a href='#productModal'  data-toggle='modal' class="boxed-btn">Add Product</a>
+							<a href='#productModal' data-toggle='modal' class="boxed-btn">Add Product</a>
 						</div>
 					</div>
 				</div>
@@ -173,7 +179,7 @@ require_once("../functions/getOrders.php");
 							<i class="fas fa-sync"></i>
 						</div>
 						<div class="content">
-                        <a href='#tipModal'  data-toggle='modal' class="boxed-btn">Create Blog</a>
+							<a href='#tipModal' data-toggle='modal' class="boxed-btn">Create Blog</a>
 						</div>
 					</div>
 				</div>
@@ -187,45 +193,68 @@ require_once("../functions/getOrders.php");
 
 	<!-- cart banner section -->
 	<section class="cart-banner pt-100 pb-100">
-    	<div class="container">
-        	<div class="row clearfix">
-            	<!--Image Column-->
-            	<div class="image-column col-lg-6">
-                	<div class="image">
-                    	<div class="price-box">
-                        	<div class="inner-price">
-                                <span class="price">
-                                    <strong>30%</strong> <br> off per kg
-                                </span>
-                            </div>
-                        </div>
-                    	<img src="assets/img/a.jpg" alt="">
-                    </div>
-                </div>
-                <!--Content Column-->
-                <div class="content-column col-lg-6">
-					<h3><span class="orange-text">Deal</span> of the month</h3>
-                    <h4>Hikan Strwaberry</h4>
-                    <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
-                    <!--Countdown Timer-->
-                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2020/2/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="cart.php" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end cart banner section -->
+		<div class="container">
+			<div class="row clearfix">
+				<!--Image Column-->
+				<div class="image-column col-lg-6">
+					<div class="image">
+						<div class="price-box">
+							<div class="inner-price">
+								<span class="price">
+									<strong>30%</strong> <br> off per kg
+								</span>
+							</div>
+						</div>
+						<img src="assets/img/a.jpg" alt="">
+					</div>
+				</div>
+				<!--Content Column-->
+				<div class="content-column col-lg-6">
+
+					<!--Countdown Timer-->
+					<div class="time-counter">
+						<div class="time-countdown clearfix" data-countdown="2020/2/01">
+							<div class="counter-column">
+								<div class="inner"><span class="count">00</span>Days</div>
+							</div>
+							<div class="counter-column">
+								<div class="inner"><span class="count">00</span>Hours</div>
+							</div>
+							<div class="counter-column">
+								<div class="inner"><span class="count">00</span>Mins</div>
+							</div>
+							<div class="counter-column">
+								<div class="inner"><span class="count">00</span>Secs</div>
+							</div>
+						</div>
+					</div>
+					<a href="cart.php" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end cart banner section -->
 
 	<!-- testimonail-section -->
 	<div class="testimonail-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-				
+				<?php myproductViewTable_fnc(); ?>
+
 			</div>
 		</div>
 	</div>
 	<!-- end testimonail-section -->
-	
+
+	<?php if (isset($_GET['message'])) : ?>
+
+		<div class='alert' data-id="<? $_GET['message']; ?>"></div>
+
+	<?php endif; ?>
+
+
+
+
 	<!-- advertisement section -->
 	<div class="abt-section mb-150">
 		<div class="container">
@@ -248,16 +277,22 @@ require_once("../functions/getOrders.php");
 		</div>
 	</div>
 	<!-- end advertisement section -->
-	
+
 	<!-- shop banner -->
 	<section class="shop-banner">
-    	<div class="container">
-        	<h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
-            <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.php" class="cart-btn btn-lg">Shop Now</a>
-        </div>
-    </section>
+		<div class="container">
+			<h3>Decem<br> with big <span class="orange-text">Discount...</span></h3>
+			<div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
+			<a href="shop.php" class="cart-btn btn-lg">Shop Now</a>
+		</div>
+	</section>
 	<!-- end shop banner -->
+
+	<?php if (isset($_GET['message2'])) : ?>
+
+		<div class='alert' data-id="<? $_GET['message2']; ?>"></div>
+
+	<?php endif; ?>
 
 	<!-- latest news -->
 	<div class="latest-news pt-150 pb-150">
@@ -265,9 +300,9 @@ require_once("../functions/getOrders.php");
 
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> News</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+					<div class="section-title">
+						<h3><span class="orange-text">Customer</span> Orders</h3>
+						<p>View All Customer Orders here.</p>
 					</div>
 				</div>
 			</div>
@@ -277,24 +312,24 @@ require_once("../functions/getOrders.php");
 					<div class="row">
 						<div class="col-lg-8 col-md-12">
 							<div class="cart-table-wrap">
-								
-										<?php orderedViewTable_fnc(); ?>
-									
+
+								<?php orderedViewTable_fnc(); ?>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-	<!-- end product section -->
-				
-			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="news.php" class="boxed-btn">More News</a>
-				</div>
+			<!-- end product section -->
+
+		</div>
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<a href="news.php" class="boxed-btn">More News</a>
 			</div>
 		</div>
+	</div>
 	</div>
 	<!-- end latest news -->
 
@@ -333,16 +368,16 @@ require_once("../functions/getOrders.php");
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Healthy and affordable fruits and assorted is our hallmark</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							<li>Ashesi University</li>
+							<li>fruitwheels@gmail.com</li>
+							<li>+233 27 078 8253</li>
 						</ul>
 					</div>
 				</div>
@@ -372,13 +407,13 @@ require_once("../functions/getOrders.php");
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights Reserved.<br>
 						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
 					</p>
 				</div>
@@ -399,111 +434,124 @@ require_once("../functions/getOrders.php");
 	<!-- end copyright -->
 
 
-	   <!-- Add Category -->
-	   <div id="addbrandModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="../admin/addcategory.php" method="POST">
-                    <div class="modal-header">
-                        <h4 class="modal-title" style="color: #051922; font-weight: bolder;">Add Product Category</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body"></div>
-                    <div class="form-group">
-                        <label  class="form-label" style="color: #051922;font-weight: bold;" >Catgory Name</label>
-                        <input type="text" class="form-control" name="categoryName" required>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btnAdd btn-primary" name="submit" value="Add">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+	<!-- Add Category -->
+	<div id="addbrandModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="../admin/addcategory.php" method="POST">
+					<div class="modal-header">
+						<h4 class="modal-title" style="color: #051922; font-weight: bolder;">Add Product Category</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="form-group">
+						<label class="form-label" style="color: #051922;font-weight: bold;">Catgory Name</label>
+						<input type="text" class="form-control" name="categoryName" required>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btnAdd btn-primary" name="submit" value="Add">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- End category -->
 
-	 <!-- Add product  Modal -->
-	 <div id="productModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="../admin/addproduct.php" method="POST"  style="margin:5% 10%;" enctype="multipart/form-data">
-                    <div class="modal-header">
-                        <h4 class="modal-title" style="color: #051922; font-weight: bolder;">Add Product</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body"></div>
-                    <div class="form-outline mb-4">
-						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;" >Product Name</label>
-                    	<input type="text" id="ptitle" name="pname"  class="form-control"  required />
-                    </div>
+	<!-- Add product  Modal -->
+	<div id="productModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="../admin/addproduct.php" method="POST" style="margin:5% 10%;" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h4 class="modal-title" style="color: #051922; font-weight: bolder;">Add Product</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body"></div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Category</label>
-                    	<?php getAllCategoryDropdown(); ?>
-                    </div>
+						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;">Product Name</label>
+						<input type="text" id="ptitle" name="pname" class="form-control" required />
+					</div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Product Price</label>
-                    	<input type="number" name="pprice" id="pprice" class="form-control" placeholder="Price" required />
-                    </div>
+						<label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Category</label>
+						<?php getAllCategoryDropdown(); ?>
+					</div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pdesc" style="color: #051922;font-weight: bold;">Product Description</label>
-                        <input type="text" name="pdesc" id="pdesc" class="form-control"  required />
-                    </div>
+						<label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Product Price</label>
+						<input type="number" name="pprice" id="pprice" class="form-control" placeholder="Price" required />
+					</div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Product Keywords</label>
-                        <input type="text" name="pkeyword" id="pkeyword" class="form-control" placeholder="Keyword" />
-                    </div>
-                    <div class="form-outline mb-4">
-                    	<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Product Imgae</label>
-                    	<input type="file" name="pImage" id="pImage" class="form-control" accept="image/*"  required />
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+						<label class="form-label" for="pdesc" style="color: #051922;font-weight: bold;">Product Description</label>
+						<input type="text" name="pdesc" id="pdesc" class="form-control" required />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Product Keywords</label>
+						<input type="text" name="pkeyword" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Product Imgae</label>
+						<input type="file" name="pImage" id="pImage" class="form-control" accept="image/*" required />
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- End of Product Modal -->
 
 	<!-- Add tips -->
-	<div id="tipModal" class="modal fade" >
-        <div class="modal-dialog" >
-            <div class="modal-content">
-                <form action="../admin/addtips.php" method="POST"  style="margin:5% 10%; " enctype="multipart/form-data">
-                    <div class="modal-header">
-                        <h4 class="modal-title" style="color: #051922;; font-weight: bolder;">Create Blog</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body"></div>
-                    <div class="form-outline mb-4">
-						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;" >Blog Title</label>
-                    	<input type="text" id="ptitle" name="tipname"  class="form-control"  required />
-                    </div>
+	<div id="tipModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="../admin/addtips.php" method="POST" style="margin:5% 10%; " enctype="multipart/form-data">
+					<div class="modal-header">
+						<h4 class="modal-title" style="color: #051922;; font-weight: bolder;">Create Blog</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body"></div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Image</label>
-                    	<?php getAllProductDropdown(); ?>
-                    </div>
+						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;">Blog Title</label>
+						<input type="text" id="ptitle" name="tipname" class="form-control" required />
+					</div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="blogdate" style="color: #051922;font-weight: bold;">Blog Date</label>
-                    	<input type="date" name="blogdate" id="blogdate" class="form-control" placeholder="Price" required />
-                    </div>
+						<label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Image</label>
+						<?php getAllProductDropdown(); ?>
+					</div>
 					<div class="form-outline mb-4">
-                        <label class="form-label" for="message" style="color: #051922;font-weight: bold;">Blog Message</label><br>
-                        <textarea name="message" id="message" cols="50" rows="10" placeholder="Blog Message"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+						<label class="form-label" for="blogdate" style="color: #051922;font-weight: bold;">Blog Date</label>
+						<input type="date" name="blogdate" id="blogdate" class="form-control" placeholder="Price" required />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="message" style="color: #051922;font-weight: bold;">Blog Message</label><br>
+						<textarea name="message" id="message" cols="50" rows="10" placeholder="Blog Message"></textarea>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- End of tips Modal -->
 
-	
+	<script>
+		const message2 = $(".alert").data("id")
+
+		if (message2) {
+			Swal.fire({
+				icon: 'success',
+				title: 'Update.',
+				text: 'Product Updated Successfully!',
+			})
+		}
+		console.log(message2)
+	</script>
+
+
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -524,6 +572,20 @@ require_once("../functions/getOrders.php");
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script>
+		const message = $(".alert").data("id")
+
+		if (message) {
+			Swal.fire({
+				icon: 'warning',
+				title: 'Deleted.',
+				text: 'Cart Item Has Been Deleted!',
+			})
+		}
+		console.log(message)
+	</script>
 
 </body>
+
 </html>

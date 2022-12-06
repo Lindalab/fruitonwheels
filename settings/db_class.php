@@ -21,7 +21,7 @@ require_once('db_cred.php');
 	*@return bolean
 	**/
 	function connect(){
-		$this->conn=mysqli_connect(SERVERNAME,HOSTNAME,PASSWORD,DATABASE);
+		$this->conn=mysqli_connect(SERVERNAME,USERNAME,PASSWORD,DATABASE);
 		if(mysqli_connect_errno()){
 			return false;
 		}

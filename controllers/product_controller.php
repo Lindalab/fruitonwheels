@@ -46,9 +46,9 @@ function deleteProduct_ctr($product_id){
      return $product->deleteProduct($product_id);
  }
 
- function updateProduct_ctr($product_id,$product_category, $product_name, $product_price, $product_description, $product_image, $product_search_words){
+ function updateProduct_ctr($product_id,$product_category, $product_name, $product_price, $product_description, $product_search_words){
     $product=new product_class;
-     return $product->updateProduct($product_id,$product_category, $product_name, $product_price, $product_description, $product_image, $product_search_words);
+     return $product->updateProduct($product_id,$product_category, $product_name, $product_price, $product_description, $product_search_words);
  }
 
  function selectAllProduct_ctr(){

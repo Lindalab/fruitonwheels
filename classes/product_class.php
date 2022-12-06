@@ -58,8 +58,8 @@ class product_class extends db_connection
         return $this->db_query($sql);
     }
 
-    function updateProduct($product_id,$product_category, $product_name, $product_price, $product_description, $product_image, $product_search_words){
-        $sql="UPDATE `products` SET `product_category`='$product_category',`product_name`='$product_name',`product_price`='$product_price',`product_description`='$product_description',`product_image`='$product_image',`product_search_words`=' $product_search_words' WHERE `product_id`='$product_id'";
+    function updateProduct($product_id,$product_category, $product_name, $product_price, $product_description,$product_search_words){
+        $sql="UPDATE `products` SET `product_category`='$product_category',`product_name`='$product_name',`product_price`='$product_price',`product_description`='$product_description',`product_search_words`=' $product_search_words' WHERE `product_id`='$product_id'";
         return $this->db_query($sql);
     }
 
