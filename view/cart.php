@@ -4,6 +4,7 @@ require_once("../functions/displayCart.php");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,19 +38,21 @@ require_once("../functions/displayCart.php");
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -103,13 +106,13 @@ require_once("../functions/displayCart.php");
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<!-- <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a> -->
 									</div>
 								</li>
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-						<div class="mobile-menu"></div>
+						<!-- <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div> -->
 						<!-- menu end -->
 					</div>
 				</div>
@@ -136,7 +139,7 @@ require_once("../functions/displayCart.php");
 		</div>
 	</div>
 	<!-- end search arewa -->
-	
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -161,7 +164,7 @@ require_once("../functions/displayCart.php");
 						<table class="cart-table">
 							<thead class="cart-table-head">
 								<tr class="table-head-row">
-									<th class="product-remove"></th>
+									<th class="product-remove">Remove </th>
 									<th class="product-image">Product Image</th>
 									<th class="product-name">Name</th>
 									<th class="product-price">Price</th>
@@ -172,10 +175,10 @@ require_once("../functions/displayCart.php");
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
-									$catTotal = myCartViewTable_fnc();
-								
-								
+								<?php
+								$catTotal = myCartViewTable_fnc();
+
+
 								?>
 							</tbody>
 						</table>
@@ -194,7 +197,7 @@ require_once("../functions/displayCart.php");
 							<tbody>
 								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td><?php echo $catTotal;?></td>
+									<td><?php echo $catTotal; ?></td>
 								</tr>
 							</tbody>
 						</table>
@@ -218,6 +221,12 @@ require_once("../functions/displayCart.php");
 		</div>
 	</div>
 	<!-- end cart -->
+
+	<?php if (isset($_GET['message'])) : ?>
+
+		<div class='alert' data-id="<? $_GET['message']; ?>"></div>
+
+	<?php endif; ?>
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">
@@ -293,13 +302,13 @@ require_once("../functions/displayCart.php");
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights Reserved.<br>
 						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
 					</p>
 				</div>
@@ -318,7 +327,7 @@ require_once("../functions/displayCart.php");
 		</div>
 	</div>
 	<!-- end copyright -->
-	
+
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -339,6 +348,22 @@ require_once("../functions/displayCart.php");
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+	<script>
+		const message = $(".alert").data("id")
+
+		if (message) {
+			Swal.fire({
+				icon: 'warning',
+				title: 'Deleted.',
+				text: 'Cart Item Has Been Deleted!',
+			})
+		}
+		console.log(message)
+	</script>
+
 
 </body>
+
 </html>

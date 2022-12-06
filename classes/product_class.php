@@ -77,6 +77,11 @@ class product_class extends db_connection
         $sql="SELECT products.* FROM products,categories WHERE categories.category_id=products.product_category and categories.category_name LIKE '%$category%';";
         return $this->getAllData($sql);
     }
+
+    function SearchProduct($SearchItem){
+        $sql="SELECT * FROM `products`,`categories` WHERE product_name LIKE '%$SearchItem%' and product_search_words LIKE '%$SearchItem%' and categories.category_name LIKE '%$SearchItem%';";
+        return $this->getAllData($sql);
+    }
 	
 
 }

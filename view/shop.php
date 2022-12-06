@@ -5,6 +5,7 @@ require_once("../functions/displayProduct.php");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,18 +36,20 @@ require_once("../functions/displayProduct.php");
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -99,19 +102,18 @@ require_once("../functions/displayProduct.php");
 								</li>
 								<li>
 									<div class="header-icons">
-										<?php 
-										if(isset($_SESSION['userLogin'])){
+										<?php
+										if (isset($_SESSION['userLogin'])) {
 											echo " <a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</a>";
 											echo "<a class='shopping-cart' href='cart.php'><i class='fas fa-shopping-cart'></i></a>";
-										}
-										else{
+										} else {
 											echo "
         										<a class='shopping-cart' href='register.php'>Sign Up</i></a>
 												<a class='shopping-cart' href='login.php'>Login</i></a>
        											";
 										}
-										 ?>
-										
+										?>
+
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -136,8 +138,10 @@ require_once("../functions/displayProduct.php");
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
 							<h3>Search For:</h3>
+							<form>
 							<input type="text" placeholder="Keywords">
 							<button type="submit">Search <i class="fas fa-search"></i></button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -145,7 +149,7 @@ require_once("../functions/displayProduct.php");
 		</div>
 	</div>
 	<!-- end search arewa -->
-	
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -166,33 +170,45 @@ require_once("../functions/displayProduct.php");
 		<div class="container">
 
 			<div class="row">
-                <div class="col-md-12">
-                    <div class="product-filters">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".strawberry">Fruits</li>
-                            <li data-filter=".berry">Smoothies</li>
-                            <li data-filter=".lemon">Popsicles</li>
+				<div class="col-md-12">
+					<div class="product-filters">
+						<ul>
+							<li class="active" data-filter="*">All</li>
+							<li data-filter=".strawberry">Fruits</li>
+							<li data-filter=".berry">Smoothies</li>
+							<li data-filter=".lemon">Popsicles</li>
 							<li data-filter=".fruitjuice">Fruit Juice</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+						</ul>
+					</div>
+				</div>
+			</div>
 
 			<div class="row product-lists">
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<?php showAllProductsByType_fnc("Fruits"); ?>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center berry">
-				<?php showAllProductsByType_fnc("Smoothies"); ?>
+					<?php showAllProductsByType_fnc("Smoothies"); ?>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center lemon">
-				<?php showAllProductsByType_fnc("Popsicles"); ?>
+					<?php showAllProductsByType_fnc("Popsicles"); ?>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center fruitjuice">
-				<?php showAllProductsByType_fnc("Fruitjuice"); ?>
+					<?php showAllProductsByType_fnc("Fruitjuice"); ?>
 				</div>
 			</div>
+
+			<?php if (isset($_GET['message'])) : ?>
+
+				<div class='alert' data-id="<? $_GET['message']; ?>"></div>
+
+			<?php endif; ?>
+
+			<?php if (isset($_GET['messageIncrease'])) : ?>
+
+				<div class='alert' data-id="<? $_GET['messageIncrease']; ?>"></div>
+
+			<?php endif; ?>
 
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -285,14 +301,14 @@ require_once("../functions/displayProduct.php");
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Linda Arthur</a>,  All Rights Reserved.<br>
-						
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Linda Arthur</a>, All Rights Reserved.<br>
+
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
@@ -310,9 +326,9 @@ require_once("../functions/displayProduct.php");
 		</div>
 	</div>
 
-	
+
 	<!-- end copyright -->
-	
+
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -333,6 +349,35 @@ require_once("../functions/displayProduct.php");
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+	<script>
+		const message = $(".alert").data("id")
+
+		if (message) {
+			Swal.fire({
+				icon: 'success',
+				title: 'Add to Cart.',
+				text: 'Your item has been added to Cart successfully!',
+			})
+		}
+		console.log(message)
+	</script>
+
+	<script>
+		const messageIncrease = $(".alert").data("id")
+
+		if (messageIncrease) {
+			Swal.fire({
+				icon: 'success',
+				title: 'Add to Cart.',
+				text: 'Cart item Quantity has been increase in Cart!',
+			})
+		}
+		console.log(messageIncrease)
+	</script>
+
 
 </body>
+
 </html>

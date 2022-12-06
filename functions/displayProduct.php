@@ -69,8 +69,6 @@ function showAllProductsByType_fnc($category)
    
 }
 
-
-
 function showSingleProductByType($product_id,$productName,$productPrice,$productImage)
 {
 
@@ -90,5 +88,32 @@ function showSingleProductByType($product_id,$productName,$productPrice,$product
 			</div>
 			 ";
 }
+
+
+//Search item fucntion
+
+function showASearchProducts_fnc()
+{
+
+    $data =selectAllProduct_ctr();
+   
+
+        foreach($data as $product) {
+
+            $product_id = $product['product_id'];
+            $productName = $product['product_name'];
+            $productPrice = $product['product_price'];
+            $productImage = $product['product_image'];
+            showSingleProduct($product_id,$productName,$productPrice,$productImage);
+            
+
+            
+        }
+   
+}
+
+
+
+
 
 ?>

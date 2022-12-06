@@ -1,5 +1,5 @@
 <?php 
-
+require_once("../functions/displayblog.php");
 	session_start();
 
 ?>
@@ -165,7 +165,9 @@
 	<div class="latest-news mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-6">
+                <?php  showBlog_fnc(); ?> 
+
+				<!-- <div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="single-news.php"><div class="latest-news-bg news-bg-1"></div></a>
 						<div class="news-text-box">
@@ -175,10 +177,9 @@
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
 							<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
 						<a href="single-news.php"><div class="latest-news-bg news-bg-2"></div></a>

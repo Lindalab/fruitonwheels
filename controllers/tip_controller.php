@@ -21,8 +21,8 @@ function selectABlog_ctr($tip_id){
     $blog = new tip_class;
     return $blog->selectABlog($tip_id);
 }
-function selectBlogsByLimit_ctr($number){
+function selectBlogsByLimit_ctr(){
     $blog = new tip_class;
-    return $blog->selectBlogsByLimit($number);
+    return $blog->selectBlogsByLimit();
 }
 ?>

@@ -66,5 +66,10 @@ function deleteProduct_ctr($product_id){
     return $product->selectProductByCategory($category);
  }
 
+ function SearchProduct_ctr($SearchItem){
+    $product = new product_class;
+    return $product->SearchProduct($SearchItem);
+ }
+
 
 ?>

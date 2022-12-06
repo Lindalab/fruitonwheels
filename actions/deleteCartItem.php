@@ -14,8 +14,8 @@ if(!$deleteCart){
 
 }
 else{
-    echo "<script>alert('Cart item deleted Successfully');</script>";
-    header("location:../view/cart.php");
+    
+    header("location:../view/cart.php?message=success");
 }
 
 

@@ -13,7 +13,7 @@ require_once("../settings/db_class.php");
 class tip_class extends db_connection
 { 
     function creatBlog($product_id,$tip_title,$tip_date,$message){
-        $sql="INSERT INTO `tips`(`product_id`, `tip_title`, `tip_date`, `message`) VALUES ('$product_id','$tip_title','$tip_date','$message`)";
+        $sql="INSERT INTO `tips`(`product_id`, `tip_title`, `tip_date`, `message`) VALUES ('$product_id','$tip_title','$tip_date','$message')";
         return $this->db_query($sql);
     }
     function deleteblog($tip_id){
@@ -32,8 +32,9 @@ class tip_class extends db_connection
         $sql="SELECT * FROM `tips` WHERE `tip_id`=$tip_id";
         return $this->getAdata($sql);
     }
-    function selectBlogsByLimit($number){
-        $sql="SELECT * FROM `tips` LIMIT $number";
+    function selectBlogsByLimit(){
+        $sql="SELECT tips.tip_id as tip_id , products.product_image as product_image , tips.tip_title as tip_title,tips.tip_date as tip_date ,tips.message FROM  tips, products WHERE products.product_id=tips.product_id  ORDER BY RAND()
+        LIMIT 6";
         return $this->getAllData($sql);
     }
 }

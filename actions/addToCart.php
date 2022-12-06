@@ -13,7 +13,7 @@ session_start();
     if($checkItemExit != NULL){
         $increaseQtyByOne= increaseCartItemByOne_ctr($product_id,$ip_add, $customer_id,$quantity);
         if($increaseQtyByOne){
-            header("location:../view/shop.php");}
+            header("location:../view/shop.php?messageIncrease=success");}
             else{
                 echo "<script>alert('Failed to increase Item Cart');</script>";
                 }
@@ -27,7 +27,7 @@ session_start();
         }
         else{
             echo "<script>alert('Product successfully added to cart');</script>";
-            header("location:../view/shop.php");
+            header("location:../view/shop.php?message=success");
         }
     
     }

@@ -222,7 +222,7 @@
 								<li><a href="single-news.php">Why the berries always look delecious</a></li>
 							</ul>
 						</div>
-						<div class="archive-posts">
+						<!-- <div class="archive-posts">
 							<h4>Archive Posts</h4>
 							<ul>
 								<li><a href="single-news.php">JAN 2019 (5)</a></li>
@@ -231,7 +231,7 @@
 								<li><a href="single-news.php">SEP 2019 (4)</a></li>
 								<li><a href="single-news.php">DEC 2019 (3)</a></li>
 							</ul>
-						</div>
+						</div> -->
 						<div class="tag-section">
 							<h4>Tags</h4>
 							<ul>

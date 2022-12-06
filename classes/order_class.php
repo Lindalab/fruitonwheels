@@ -102,7 +102,7 @@ class order_class extends db_connection
     }
 
     function showCustomersOrder(){
-        $sql="SELECT products.product_image, orderdetails.quantity,products.product_price,customer.customer_name, customer.customer_contact,orders.address_location,orders.invoice_no,orders.order_status FROM products,customer,orders,orderdetails WHERE customer.customer_id=orders.customer_id and orders.order_id=orderdetails.order_id and orderdetails.product_id=products.product_id";
+        $sql="SELECT products.product_image, orderdetails.quantity,products.product_price,customer.customer_name, customer.customer_contact,orders.invoice_no,orders.order_status FROM products,customer,orders,orderdetails WHERE customer.customer_id=orders.customer_id and orders.order_id=orderdetails.order_id and orderdetails.product_id=products.product_id";
         return $this->getAllData($sql);
     }
 
