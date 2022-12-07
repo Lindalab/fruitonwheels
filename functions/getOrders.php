@@ -6,7 +6,7 @@ function orderedViewTable_fnc()
     $data = showCustomerOrders_ctr();
     echo "
 
-    <table class='table'>
+    <table class='table' width='300px' >
     <thead class='table-warning'>
         <tr>
         <th scope='col'>Product Image</th>
