@@ -1,5 +1,7 @@
 <?php
 require_once("../functions/displayCart.php");
+session_start();
+$email= $_SESSION['customer_email'];
 
 ?>
 
@@ -221,7 +223,7 @@ require_once("../functions/displayCart.php");
 							</tbody>
 						</table>
 						<!-- <a href="#" class="boxed-btn" onclick="payWithPaystack()" >Place Order</a> -->
-						<button class="btn btn-primary" type="submit"  onclick="payWithPaystack()">Pay</button>
+						<button class="btn btn-success" type="submit"  onclick="payWithPaystack()">Pay</button>
 					</div>
 				</div>
 			</div>
@@ -239,7 +241,7 @@ require_once("../functions/displayCart.php");
             let handler = PaystackPop.setup({
                 key: 'pk_test_1917da2fc21c61a25eb4edb146b723e98b2a7969', // Replace with your public key
                 // email: document.getElementById("email-address").value,
-                email: <?php echo $_SESSION['customer_email'];?>,
+                email: $email,
                 // amount: document.getElementById("amount").value * 100,
                 amount: <?php echo $catTotal ?> * 100,
                 ref: Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
