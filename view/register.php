@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
+	<script src="../js/forms.js"></script>
 
 </head>
 <body>
@@ -156,27 +157,27 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-                        <form action="../login/registerprocessing.php" method="POST">
+                        <form name="myform" action="../login/registerprocessing.php" method="POST" onsubmit="return validateform()" >
                             <div class="modal-body"></div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="name" required>
+                                <input type="text" class="form-control" name="name" id="name" >
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" name="email" required>
+                                <input type="email" class="form-control" name="email" id="email" >
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" name="password" required>
+                                <input type="password" class="form-control" name="password" id="password" >
                             </div>
                             <div class="form-group">
                                 <label>City</label>
-                                <input type="text" class="form-control" name="city" required>
+                                <input type="text" class="form-control" name="city" >
                             </div>
                             <div class="form-group">
                                 <label>Contact</label>
-                            <input type="text" class="form-control" name="contact" required>
+                            <input type="text" class="form-control" name="contact"><span id="numloc"></span> 
                             </div>
                             <div class="modal-footer">
                                 <!-- <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"> -->

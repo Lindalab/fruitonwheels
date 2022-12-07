@@ -34,12 +34,12 @@ function myCartItems_fnc($productId,$productName,$productPrice,$productQuantity,
     echo "
 
     <tr class='table-body-row'>
-    <td class='product-remove'><a href='../actions/deleteCartItem.php?id=$productId&ipaddress=$customerIpadd&customerid=$customerId&quantity=$productQuantity'><i class='far fa-window-close'></i></a></td>
+    <td <a class='btn-sm '><a href='../actions/deleteCartItem.php?id=$productId&ipaddress=$customerIpadd&customerid=$customerId&quantity=$productQuantity'><i class='bi bi-trash-fill text-danger'></a></td>
     <td class='product-image'><img src='$productImage' alt=''></td>
     <td class='product-name'>$productName</td>
     <td class='product-price'>$productPrice</td>
     <td class='product-quantity'>$productQuantity</td>
-    <td><a class='btn-sm btn-success' href='../actions/increaseCartQty.php?id=$productId&ipaddress=$customerIpadd&customerid=$customerId&quantity=$productQuantity'><i style='' class='bi bi-plus'></i></a></td>
+    <td><a class='btn-sm btn-success' href='../actions/increaseCartQty.php?id=$productId&ipaddress=$customerIpadd&customerid=$customerId&quantity=$productQuantity'><i class='bi bi-plus'></i></a></td>
     <td><a class='btn-sm btn-danger' href='../actions/decreaseCartQty.php?id=$productId&ipaddress=$customerIpadd&customerid=$customerId&quantity=$productQuantity'><i class='bi bi-dash-lg'></i></a></td>
     <td class='product-total'>$total</td>
    </tr>
@@ -50,6 +50,7 @@ function myCartItems_fnc($productId,$productName,$productPrice,$productQuantity,
 
 
 
+// Check Out 
 
 function myPaymentSummaryTable_fnc()
 {

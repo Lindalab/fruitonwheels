@@ -52,8 +52,8 @@ $ip_add=get_client_ip();
 
 $getdataFromCart=showAPersonCart_ctr($customer_id,$ip_add);
 foreach($getdataFromCart as$cartItem){
-    $product_id= $cartItem['p_id'];
-    $qty= $cartItem['qty'];
+    $product_id= $cartItem['product_id'];
+    $qty= $cartItem['quantity'];
     addToOrderDetails_ctr($getOrderId,$product_id,$qty);
     $deleteCurrentCart= deletFromCart_ctr($product_id,$ip_add,$customer_id, $qty);
     if (!$deleteCurrentCart){

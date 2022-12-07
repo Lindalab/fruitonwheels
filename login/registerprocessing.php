@@ -12,15 +12,14 @@ if(isset($_POST['submit'])){
 
     $hashed_password = base64_encode($customer_pass);
 
-    if(selectAdata($customer_email)===NULL){
+    if(selectAdata($customer_email) === NULL){
         $register=createCustomer_ctr($customer_name, $customer_email,  $hashed_password , $customer_city, $customer_contact, $user_role);
         if($register==true){
             header("location:../view/login.php");
 
         }
         else{
-            echo"<script> alert('Registration Unsuccessful');
-            </script>";
+            
             header("location:../view/register.php");
         }
 

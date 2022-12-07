@@ -53,19 +53,14 @@ function showAllProductsByType_fnc($category)
 {
 
     $data =selectProductByCategory($category);
-   
-
-        foreach($data as $product) {
+    foreach($data as $product) {
 
             $product_id = $product['product_id'];
             $productName = $product['product_name'];
             $productPrice = $product['product_price'];
             $productImage = $product['product_image'];
             showSingleProductByType($product_id,$productName,$productPrice,$productImage);
-            
-
-            
-        }
+    }
    
 }
 
@@ -85,17 +80,17 @@ function showSingleProductByType($product_id,$productName,$productPrice,$product
                 echo "<a href='login.php?pid=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Login to Add to Cart</a>";
              }
             echo "
-			</div>
+		</div>
 			 ";
 }
 
 
 //Search item fucntion
 
-function showASearchProducts_fnc()
+function showASearchProducts_fnc($SearchItem)
 {
 
-    $data =selectAllProduct_ctr();
+    $data =SearchProduct_ctr($SearchItem);
    
 
         foreach($data as $product) {
