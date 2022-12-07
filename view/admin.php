@@ -277,7 +277,7 @@ require_once("../admin/productTable.php")
 	<!-- shop banner -->
 	<section class="shop-banner">
 		<div class="container">
-			
+		<?php orderedViewTable_fnc(); ?>
 		</div>
 	</section>
 	<!-- end shop banner -->
