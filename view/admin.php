@@ -303,6 +303,10 @@ require_once("../admin/productTable.php")
 					<div class="section-title">
 						<h3><span class="orange-text">Customer</span> Orders</h3>
 						<p>View All Customer Orders here.</p>
+						<div class="cart-table-wrap">
+							<?php orderedViewTable_fnc(); ?>
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -311,11 +315,7 @@ require_once("../admin/productTable.php")
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-md-12">
-							<div class="cart-table-wrap">
-
-								<?php orderedViewTable_fnc(); ?>
-
-							</div>
+							
 						</div>
 					</div>
 				</div>
