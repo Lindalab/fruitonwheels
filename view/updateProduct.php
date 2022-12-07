@@ -103,8 +103,7 @@ $productKeyword=$_GET['pkeyword'];
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" class="current-list-item" href="#">Sign Up</i></a>
-										<a class="shopping-cart" href="login.php">Login</i></a>
+										<a class='shopping-cart' href='../admin/privilleges.php?Logout=Logout'>Logout</i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -145,8 +144,8 @@ $productKeyword=$_GET['pkeyword'];
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Join the Community</p>
-						<h1>Sign up now</h1>
+						<p>Admin Privilleges</p>
+						<h1>Update Product Details</h1>
 					</div>
 				</div>
 			</div>
