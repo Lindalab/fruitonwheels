@@ -275,7 +275,7 @@ require_once("../admin/productTable.php")
 	<!-- end advertisement section -->
 
 	<!-- shop banner -->
-	<section class="shop-banner">
+	<section class="testimonail-section mt-150 mb-150">
 		<div class="container">
 		<?php orderedViewTable_fnc(); ?>
 		</div>
@@ -298,7 +298,7 @@ require_once("../admin/productTable.php")
 						<h3><span class="orange-text">Customer</span> Orders</h3>
 						<p>View All Customer Orders here.</p>
 						<div class="cart-table-wrap">
-							<?php orderedViewTable_fnc(); ?>
+						
 
 						</div>
 					</div>
