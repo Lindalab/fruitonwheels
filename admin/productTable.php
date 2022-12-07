@@ -43,11 +43,10 @@ function myProductsaddcart_fnc($productId,$productName,$productPrice,$productDes
 {
     echo "
     <tr>
-    <td><img src='$productImage' alth='$productName' width='200px' height='200'/></td>
+    <td><img src='$productImage' alt='$productName' width='200px' height='200'/></td>
       <td>$productName</td>
       <td>$productPrice</td>
       <td>$productDescription</td>
-      
       <td>
       <a href ='../admin/deleteProduct.php?id=$productId&pname=$productName&pprice=$productPrice&pdes=$productDescription&pimage=$productImage&pkeyword=$productKeyword' class='btn btn-warning btn-sm active' role='button' aria-pressed='true'><i class='bi bi-trash-fill'></i></a>
       </td>

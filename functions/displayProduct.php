@@ -70,7 +70,7 @@ function showSingleProductByType($product_id,$productName,$productPrice,$product
     echo "
         <div class='single-product-item'>
 			<div class='product-image'>
-				<a href='#'><img src='$productImage' alth='$productName' /></a>
+				<a href='#'><img src='$productImage' alt='$productName' /></a>
 			</div>
 			<h3>$productName</h3>
 			<p class='product-price'><span>Per Kg</span> $productPrice GHC </p>";
