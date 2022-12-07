@@ -43,7 +43,7 @@ function myProductsaddcart_fnc($productId,$productName,$productPrice,$productDes
 {
     echo "
     <tr>
-    <td><img src='$productImage' alt='$productName' width='100px' height='100'></td>
+    <td><img src='".$productImage."' alt='$productName' width='100px' height='100'></td>
       <td>$productName</td>
       <td>$productPrice</td>
       <td>$productDescription</td>
