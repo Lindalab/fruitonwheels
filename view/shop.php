@@ -184,15 +184,13 @@ require_once("../functions/displayProduct.php");
 			</div>
 
 			<div class="row product-lists">
-				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<?php 
-					if(isset($_POST['SubmitSearch'])){
+				<?php
+				if(isset($_POST['SubmitSearch'])){
 		            $SearchItem=$_POST['searchitem'];
 		           showASearchProducts_fnc($SearchItem);
-	               }
-				   else{showAllProductsByType_fnc("Fruits"); 
-				}
-					?>
+	               }?>
+				<div class="col-lg-4 col-md-6 text-center strawberry">
+					<?php showAllProductsByType_fnc("Fruits"); ?>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center berry">
 					<?php showAllProductsByType_fnc("Smoothies"); ?>
@@ -212,11 +210,7 @@ require_once("../functions/displayProduct.php");
 			<?php endif; ?>
 			
 
-			<?php if (isset($_GET['messageIncrease'])) : ?>
-
-				<div class='alert' data-id="<? $_GET['messageIncrease']; ?>"></div>
-
-			<?php endif; ?>
+			
 
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -369,18 +363,7 @@ require_once("../functions/displayProduct.php");
 		console.log(message)
 	</script>
 
-	<script>
-		const messageIncrease = $(".alert").data("id")
-
-		if (messageIncrease) {
-			Swal.fire({
-				icon: 'success',
-				title: 'Add to Cart.',
-				text: 'Cart item Quantity has been increase in Cart!',
-			})
-		}
-		console.log(messageIncrease)
-	</script>
+	
 
 
 </body>

@@ -28,7 +28,7 @@ session_start();
         
         $increaseQtyByOne= increaseCartItemByOne_ctr($product_id,$ip_add, $customer_id,$quantity);
         if($increaseQtyByOne){
-            header("location:../view/shop.php?messageIncrease=success");
+            header("location:../view/shop.php?");
         }
             else{
                 echo "<script>alert('Failed to increase Item Cart');</script>";
