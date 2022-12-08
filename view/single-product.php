@@ -78,10 +78,10 @@
 									</ul>
 								</li> -->
 								<li><a href="news.php">Blog</a>
-									<ul class="sub-menu">
+									<!-- <ul class="sub-menu">
 										<li><a href="news.php">News</a></li>
 										<li><a href="single-news.php">Single News</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li><a href="contact.php">Contact</a></li>
 								<li><a href="shop.php">Shop</a>

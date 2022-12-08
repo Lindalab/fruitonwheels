@@ -149,12 +149,6 @@ require_once("../functions/displayProduct.php");
 		</div>
 	</div>
 	<!-- end search arewa -->
-	<?php 
-	if(isset($_POST['SubmitSearch'])){
-		$SearchItem=$_POST['searchitem'];
-		showASearchProducts_fnc($SearchItem);
-	}
-	?>
 
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -191,7 +185,14 @@ require_once("../functions/displayProduct.php");
 
 			<div class="row product-lists">
 				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<?php showAllProductsByType_fnc("Fruits"); ?>
+					<?php 
+					if(isset($_POST['SubmitSearch'])){
+		            $SearchItem=$_POST['searchitem'];
+		           showASearchProducts_fnc($SearchItem);
+	               }
+				   else{showAllProductsByType_fnc("Fruits"); 
+				}
+					?>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center berry">
 					<?php showAllProductsByType_fnc("Smoothies"); ?>
