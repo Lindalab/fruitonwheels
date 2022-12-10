@@ -79,7 +79,7 @@ class product_class extends db_connection
     }
 
     function SearchProduct($SearchItem){
-        $sql="SELECT * FROM `products` WHERE product_name LIKE '%$SearchItem%' and product_search_words LIKE '%$SearchItem%' ";
+        $sql="SELECT * FROM `products` WHERE product_name LIKE '%$SearchItem%' or product_search_words LIKE '%$SearchItem%' ";
         return $this->getAllData($sql);
     }
 	

@@ -246,7 +246,7 @@ require_once("../functions/displayCart.php");
 			var email = document.getElementById("email").value;
 
             let handler = PaystackPop.setup({
-                key: 'pk_test_1917da2fc21c61a25eb4edb146b723e98b2a7969', // Replace with your public key
+                key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
                 // email: document.getElementById("email-address").value,
                 email: '<?php echo trim($_SESSION['customer_email']);?>',
                 // amount: document.getElementById("amount").value * 100,
