@@ -221,9 +221,20 @@ require_once("../functions/displayCart.php");
 								</tr>
 							</tbody>
 						</table>
-						<p id="email"> <?php echo $_SESSION['customer_email']?></p>
+						
+						<form >
+                            <div class="modal-body"></div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" name="name" value="<?php echo $_SESSION['customer_email'];?>;" id="email" >
+                            </div>
+                            
+                                <!-- <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"> -->
+                                <input type="submit" class="btnAdd btn-primary" name="submit" onclick="payWithPaystack()" value="Payment">
+                            </div>
+                        </form>
 						<!-- <a href="#" class="boxed-btn" onclick="payWithPaystack()" >Place Order</a> -->
-						<button class="btn btn-success" type="submit"  onclick="payWithPaystack()">Pay</button>
+						<!-- <button class="btn btn-success" type="submit"  onclick="payWithPaystack()">Pay</button> -->
 					</div>
 				</div>
 			</div>
