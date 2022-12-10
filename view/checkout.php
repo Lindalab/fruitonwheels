@@ -226,10 +226,10 @@ require_once("../functions/displayCart.php");
                             
 
                                 <!-- <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"> -->
-                                <input type="submit" class="btnAdd btn-primary" name="submit" onclick="payWithPaystack()" value="Payment">
+                                <!-- <input type="submit" class="btnAdd btn-primary" name="submit" onclick="payWithPaystack()" value="Payment"> -->
                             
 						<!-- <a href="#" class="boxed-btn" onclick="payWithPaystack()" >Place Order</a> -->
-						<!-- <button class="btn btn-success" type="submit"  onclick="payWithPaystack()">Pay</button> -->
+						<button class="btn btn-success" type="submit"  onclick="payWithPaystack()">Pay</button>
 					</div>
 				</div>
 			</div>
