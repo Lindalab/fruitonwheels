@@ -243,7 +243,7 @@ require_once("../functions/displayCart.php");
         function payWithPaystack() {
             event.preventDefault();
             // event.preventDefault();
-			var email = document.getElementById("email").value;
+			
 
             let handler = PaystackPop.setup({
                 key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
